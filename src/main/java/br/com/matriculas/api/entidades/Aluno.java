@@ -15,7 +15,7 @@ public class Aluno {
 		this.ira=ira;
 	}
 	
-	public String getName() {
+	public String getNome() {
 		return nome;
 	}
 	
