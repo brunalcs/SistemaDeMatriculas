@@ -1,10 +1,10 @@
-package br.com.matriculas.api.entidades;
+package br.com.matriculas.api.model;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class Turma {
+public class TurmaModel {
 	private String nomeDisciplina;
     private String professor;
     private String horario;
@@ -14,11 +14,11 @@ public class Turma {
 
 	// Lista de matrículas desta turma
     @JsonIgnore
-    private List<Matricula> matriculas = new ArrayList<>();
+    private List<MatriculaModel> matriculas = new ArrayList<>();
 
-    public Turma() {}
+    public TurmaModel() {}
 
-    public Turma(String nomeDisciplina, String professor, String horario, Integer vagasTotais, String codigo) {
+    public TurmaModel(String nomeDisciplina, String professor, String horario, Integer vagasTotais, String codigo) {
         this.nomeDisciplina = nomeDisciplina;
         this.professor = professor;
         this.horario = horario;
@@ -59,11 +59,11 @@ public class Turma {
         this.vagasTotais = vagasTotais;
     }
 
-    public List<Matricula> getMatriculas() {
+    public List<MatriculaModel> getMatriculas() {
         return matriculas;
     }
 
-    public void setMatriculas(List<Matricula> matriculas) {
+    public void setMatriculas(List<MatriculaModel> matriculas) {
         this.matriculas = matriculas;
     }
     

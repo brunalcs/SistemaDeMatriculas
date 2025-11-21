@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.matriculas.api.entidades.Turma;
+import br.com.matriculas.api.model.TurmaModel;
 import br.com.matriculas.api.repository.TurmaRepository;
 
 @RestController
@@ -22,12 +22,12 @@ public class TurmaController {
     }
 
     @PostMapping
-    public Turma criarTurma(@RequestBody Turma turma) {
+    public TurmaModel criarTurma(@RequestBody TurmaModel turma) {
         return repository.salvar(turma);
     }
 
     @GetMapping
-    public List<Turma> listarTurmas() {
+    public List<TurmaModel> listarTurmas() {
         return repository.buscarTodas();
     }
 }

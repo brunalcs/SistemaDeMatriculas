@@ -1,18 +1,18 @@
-package br.com.matriculas.api.entidades;
+package br.com.matriculas.api.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Matricula {
-	private Aluno aluno;
-    private Turma turma;
+public class MatriculaModel {
+	private AlunoModel aluno;
+    private TurmaModel turma;
     private StatusMatricula status;
     private Integer posicao;  // posição na fila
 
-    public Matricula() {}
+    public MatriculaModel() {}
 
-    public Matricula(Aluno aluno, Turma turma, StatusMatricula status, Integer posicao) {
+    public MatriculaModel(AlunoModel aluno, TurmaModel turma, StatusMatricula status, Integer posicao) {
         this.aluno = aluno;
         this.turma = turma;
         this.status = status;
@@ -20,19 +20,19 @@ public class Matricula {
     }
 
 
-    public Aluno getAluno() {
+    public AlunoModel getAluno() {
         return aluno;
     }
 
-    public void setAluno(Aluno aluno) {
+    public void setAluno(AlunoModel aluno) {
         this.aluno = aluno;
     }
 
-    public Turma getTurma() {
+    public TurmaModel getTurma() {
         return turma;
     }
 
-    public void setTurma(Turma turma) {
+    public void setTurma(TurmaModel turma) {
         this.turma = turma;
     }
 

@@ -7,23 +7,23 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.matriculas.api.entidades.Turma;
+import br.com.matriculas.api.model.TurmaModel;
 
 @Repository
 public class TurmaRepository {
 
-    private static Map<String, Turma> bancoDeTurmas = new HashMap<>();
+    private static Map<String, TurmaModel> bancoDeTurmas = new HashMap<>();
 
-    public Turma salvar(Turma turma) {
+    public TurmaModel salvar(TurmaModel turma) {
         bancoDeTurmas.put(turma.getCodigo(), turma);
         return turma;
     }
 
-    public List<Turma> buscarTodas() {
+    public List<TurmaModel> buscarTodas() {
         return new ArrayList<>(bancoDeTurmas.values());
     }
 
-    public Turma buscarPorCodigo(String codigo) {
+    public TurmaModel buscarPorCodigo(String codigo) {
         return bancoDeTurmas.get(codigo);
     }
 }

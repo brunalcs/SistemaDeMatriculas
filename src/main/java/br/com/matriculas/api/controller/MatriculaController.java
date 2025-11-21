@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.matriculas.api.entidades.Matricula;
+import br.com.matriculas.api.model.MatriculaModel;
 import br.com.matriculas.api.repository.MatriculaRepository;
 
 @RestController
@@ -22,12 +22,12 @@ public class MatriculaController {
     }
 
    @GetMapping
-    public List<Matricula> listarMatriculas() {
+    public List<MatriculaModel> listarMatriculas() {
         return repository.buscarTodas();
     }
 
     @PostMapping
-    public Matricula criarMatricula(@RequestBody Matricula matricula) {
+    public MatriculaModel criarMatricula(@RequestBody MatriculaModel matricula) {
         return repository.salvar(matricula);
     }
 }

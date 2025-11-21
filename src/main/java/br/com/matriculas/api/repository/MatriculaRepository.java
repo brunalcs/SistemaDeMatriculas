@@ -6,24 +6,24 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.matriculas.api.entidades.Matricula;
+import br.com.matriculas.api.model.MatriculaModel;
 
 @Repository
 public class MatriculaRepository {
 
-    private static List<Matricula> bancoDeMatriculas = new ArrayList<>();
+    private static List<MatriculaModel> bancoDeMatriculas = new ArrayList<>();
 
-    public Matricula salvar(Matricula matricula) {
+    public MatriculaModel salvar(MatriculaModel matricula) {
         bancoDeMatriculas.add(matricula);
         return matricula;
     }
 
     // Listar todas as matrículas
-    public List<Matricula> buscarTodas() {
+    public List<MatriculaModel> buscarTodas() {
         return bancoDeMatriculas;
     }
     
-    public List<Matricula> buscarPorTurma(String codigoTurma) {
+    public List<MatriculaModel> buscarPorTurma(String codigoTurma) {
         return bancoDeMatriculas.stream()
                 .filter(m -> m.getTurma().getCodigo().equals(codigoTurma))
                 .collect(Collectors.toList());

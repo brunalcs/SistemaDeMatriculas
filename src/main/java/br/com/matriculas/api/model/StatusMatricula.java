@@ -1,4 +1,4 @@
-package br.com.matriculas.api.entidades;
+package br.com.matriculas.api.model;
 
 public enum StatusMatricula {
 	CONFIRMADO,

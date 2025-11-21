@@ -1,14 +1,14 @@
-package br.com.matriculas.api.entidades;
+package br.com.matriculas.api.model;
 
-public class Aluno {
+public class AlunoModel {
 	private String nome;
 	private String matricula;
 	private String curso;
 	private Double ira;
 	
-	public Aluno() {}
+	public AlunoModel() {}
 	
-	public Aluno(String nome, String matricula, String curso, Double ira) {
+	public AlunoModel(String nome, String matricula, String curso, Double ira) {
 		this.nome=nome;
 		this.matricula=matricula;
 		this.curso=curso;

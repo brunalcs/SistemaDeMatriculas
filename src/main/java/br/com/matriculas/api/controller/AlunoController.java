@@ -1,7 +1,8 @@
 package br.com.matriculas.api.controller;
 
 import org.springframework.web.bind.annotation.*;
-import br.com.matriculas.api.entidades.Aluno;
+
+import br.com.matriculas.api.model.AlunoModel;
 import br.com.matriculas.api.repository.AlunoRepository; // Use o Service idealmente, mas para teste rápido pode ser direto
 import java.util.List;
 
@@ -16,12 +17,12 @@ public class AlunoController {
     }
 
     @PostMapping
-    public Aluno criarAluno(@RequestBody Aluno aluno) {
+    public AlunoModel criarAluno(@RequestBody AlunoModel aluno) {
         return repository.salvar(aluno);
     }
 
     @GetMapping
-    public List<Aluno> listarAlunos() {
+    public List<AlunoModel> listarAlunos() {
         return repository.buscarTodos();
     }
 }
