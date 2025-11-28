@@ -10,15 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.matriculas.api.model.MatriculaModel;
 import br.com.matriculas.api.repository.MatriculaRepository;
+import br.com.matriculas.api.service.MatriculaService;
 
 @RestController
 @RequestMapping("/matriculas")
 public class MatriculaController {
 
     private final MatriculaRepository repository;
+    private final MatriculaService service;
 
-    public MatriculaController(MatriculaRepository repository) {
+    public MatriculaController(MatriculaService service, MatriculaRepository repository) {
         this.repository = repository;
+        this.service = service;
     }
 
    @GetMapping
@@ -28,6 +31,6 @@ public class MatriculaController {
 
     @PostMapping
     public MatriculaModel criarMatricula(@RequestBody MatriculaModel matricula) {
-        return repository.salvar(matricula);
+        return service.realizarMatricula(matricula);
     }
 }

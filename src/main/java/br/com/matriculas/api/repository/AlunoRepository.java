@@ -22,4 +22,8 @@ public class AlunoRepository {
     public List<AlunoModel> buscarTodos() {
         return new ArrayList<>(bancoDeDados.values());
     }
+
+    public AlunoModel buscarPorMatricula(String matricula) {
+        return bancoDeDados.get(matricula);
+    }
 }
