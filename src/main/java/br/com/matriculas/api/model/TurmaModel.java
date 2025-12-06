@@ -14,7 +14,7 @@ public class TurmaModel {
 
 	// Lista de matrículas desta turma
     @JsonIgnore
-    private List<MatriculaModel> matriculas = new ArrayList<>();
+    //private List<MatriculaModel> matriculas = new ArrayList<>();
 
     public TurmaModel() {}
 
@@ -25,8 +25,12 @@ public class TurmaModel {
         this.vagasTotais = vagasTotais;
         this.codigo = codigo;
     }
-
     
+    @JsonIgnore
+    private List<MatriculaModel> matriculasConfirmadas = new ArrayList<>();
+    @JsonIgnore
+    private List<MatriculaModel> filaDeEspera = new ArrayList<>();
+
     public String getNomeDisciplina() {
         return nomeDisciplina;
     }
@@ -59,13 +63,13 @@ public class TurmaModel {
         this.vagasTotais = vagasTotais;
     }
 
-    public List<MatriculaModel> getMatriculas() {
+    /*public List<MatriculaModel> getMatriculas() {
         return matriculas;
     }
 
     public void setMatriculas(List<MatriculaModel> matriculas) {
         this.matriculas = matriculas;
-    }
+    }*/
     
     public String getCodigo() {
 		return codigo;
@@ -74,4 +78,20 @@ public class TurmaModel {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+	
+	public List<MatriculaModel> getMatriculasConfirmadas() {
+        return matriculasConfirmadas;
+    }
+
+    public void setMatriculasConfirmadas(List<MatriculaModel> matriculasConfirmadas) {
+        this.matriculasConfirmadas = matriculasConfirmadas;
+    }
+    
+    public List<MatriculaModel> getFilaDeEspera() {
+        return filaDeEspera;
+    }
+
+    public void setFilaDeEspera(List<MatriculaModel> filaDeEspera) {
+        this.filaDeEspera = filaDeEspera;
+    }
 }
