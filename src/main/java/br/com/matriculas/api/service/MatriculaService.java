@@ -66,7 +66,6 @@ public class MatriculaService {
         turmaEncontrada.getFilaDeEspera().clear();
         
         //DISTRIBUIR ENTRE CONFIRMADOS E FILA
-  
         int vagas = turmaEncontrada.getVagasTotais();
 
         for (int i = 0; i < todos.size(); i++) {
@@ -92,34 +91,4 @@ public class MatriculaService {
         return matriculaRepository.salvar(novaMatricula);
     }
 
-    // MÉTODO EXTRA: Promove aluno quando vaga abre
-    /*public void promoverAlunoDaFila(TurmaModel turma) {
-
-        // Se não tem ninguém na fila → nada a fazer
-        if (turma.getFilaDeEspera().isEmpty()) {
-            return;
-        }
-
-        // Se tem vaga
-        int vagasTotais = turma.getVagasTotais();
-        int vagasOcupadas = turma.getMatriculasConfirmadas().size();
-
-        if (vagasOcupadas < vagasTotais) {
-
-            // Pega o primeiro da fila
-            MatriculaModel promovido = turma.getFilaDeEspera().remove(0);
-
-            // Atualiza status
-            promovido.setStatus(StatusMatricula.CONFIRMADO);
-            promovido.setPosicao(null);
-
-            // Adiciona aos confirmados
-            turma.getMatriculasConfirmadas().add(promovido);
-
-            // Recalcula posições da fila após remoção
-            for (int i = 0; i < turma.getFilaDeEspera().size(); i++) {
-                turma.getFilaDeEspera().get(i).setPosicao(i + 1);
-            }
-        }
-    }*/
 }
