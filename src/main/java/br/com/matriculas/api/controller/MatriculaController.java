@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.matriculas.api.model.MatriculaModel;
 import br.com.matriculas.api.repository.MatriculaRepository;
@@ -25,9 +26,9 @@ public class MatriculaController {
     }
 
    @GetMapping
-    public List<MatriculaModel> listarMatriculas() {
-        return repository.buscarTodas();
-    }
+   public List<MatriculaModel> listarMatriculas() {
+       return repository.buscarTodas();
+   }
 
     @PostMapping
     public MatriculaModel criarMatricula(@RequestBody MatriculaModel matricula) {

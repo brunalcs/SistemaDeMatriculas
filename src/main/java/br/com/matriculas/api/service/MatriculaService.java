@@ -72,17 +72,17 @@ public class MatriculaService {
         for (int i = 0; i < todos.size(); i++) {
 
             MatriculaModel m = todos.get(i);
-
+            
+            m.setPosicao(i+1);
+            
             if (i < vagas) {
                 // CONFIRMADO
                 m.setStatus(StatusMatricula.CONFIRMADO);
-                m.setPosicao(null);
                 turmaEncontrada.getMatriculasConfirmadas().add(m);
 
             } else {
                 // ESPERA
                 m.setStatus(StatusMatricula.ESPERA);
-                m.setPosicao(i - vagas + 1);
                 turmaEncontrada.getFilaDeEspera().add(m);
             }
         }
